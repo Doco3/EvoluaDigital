@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolua Digital | Marketing, Vendas e Inteligência Artificial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0d0a1b; color: #f3f4f6; overflow-x: hidden; }
+        .gradient-text { background: linear-gradient(90deg, #8b5cf6, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-fill-color: transparent; }
+        .btn-primary { background-color: #8b5cf6; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #6d28d9; box-shadow: 0 4px 20px rgba(139, 92, 246, 0.7); transform: scale(1.05); }
+        .card-bg { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .hero-bg { background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.1) 30%, #0d0a1b 80%); min-height: 60vh; }
+        .price-wrapper { display: flex; justify-content: center; align-items: flex-start; line-height: 1; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-100 { transition-delay: 0.1s; }
+        .reveal-delay-200 { transition-delay: 0.2s; }
+        .reveal-delay-300 { transition-delay: 0.3s; }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="p-4 md:px-8 sticky top-0 z-50 bg-black/80 backdrop-blur-sm shadow-xl border-b border-white/5 reveal active">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto">
+            <a href="#" class="flex flex-col justify-center hover:opacity-90 transition-opacity leading-none group">
+                <span class="text-3xl md:text-4xl font-black text-purple-500 tracking-tight group-hover:text-purple-400 transition-colors">EVOLUA</span>
+                <span class="text-xl md:text-2xl font-bold text-white tracking-[0.2em] -mt-1 ml-0.5 group-hover:text-gray-200 transition-colors">DIGITAL</span>
+            </a>
+            <a href="#contato" class="btn-primary px-6 py-2 rounded-full font-semibold shadow-lg">Fale Conosco</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero -->
+        <section class="py-20 md:py-32 text-center hero-bg relative overflow-hidden">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-purple-500/10 to-transparent pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto px-4 relative z-10">
+                <p class="text-lg uppercase tracking-[0.2em] font-medium text-purple-400 mb-6 animate-pulse reveal">Marketing, Performance e Vendas</p>
+                <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8 reveal reveal-delay-100">Seu Negócio Escalonado com a Potência da <br><span class="gradient-text">Inteligência Artificial</span></h2>
+                <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-200">A Evolua Digital utiliza <span class="font-bold text-white">IA e Micro-SaaS</span> para otimizar campanhas, atrair leads e unificar marketing e comercial.</p>
+                <div class="reveal reveal-delay-300">
+                    <a href="#servicos" class="btn-primary px-10 py-5 text-xl rounded-full font-bold shadow-2xl shadow-purple-500/40 inline-block">Quero Evoluir Meu Negócio</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quem Somos -->
+        <section id="quem-somos" class="py-20 bg-[#161324]">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Quem Somos e <br><span class="text-purple-400">Nosso Propósito</span></h3>
+                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">Nossa empresa tem como foco a construção de uma marca forte com o propósito de <strong class="text-white">melhorar o relacionamento com os clientes</strong> e <strong class="text-white">ampliar o potencial de ganhos</strong>.</p>
+                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">Entregamos soluções completas que geram <strong class="text-white">resultados reais e consistentes</strong> através de uma operação unificada.</p>
+                </div>
+                <div class="hidden md:block relative reveal reveal-delay-200">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl opacity-30 blur-lg"></div>
+                    <img src="https://placehold.co/600x400/161324/9ca3af?text=Estratégia+e+Performance" class="relative rounded-xl shadow-2xl border border-white/10 w-full hover:scale-[1.02] transition duration-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section class="py-20 bg-[#0d0a1b] relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-purple-900/10 to-transparent pointer-events-none"></div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Por que escolher a <span class="gradient-text">Evolua?</span></h3>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">Somos parceiros estratégicos focados no seu crescimento.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal reveal-delay-100">
+                        <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors"><span class="text-3xl">⚡</span></div>
+                        <h4 class="text-xl font-bold text-white mb-3">Expertise Técnica</h4>
+                    </div>
+                    <div class="card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal reveal-delay-200">
+                        <div class="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors"><span class="text-3xl">🎯</span></div>
+                        <h4 class="text-xl font-bold text-white mb-3">Foco no Cliente</h4>
+                    </div>
+                    <div class="card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal reveal-delay-300">
+                        <div class="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors"><span class="text-3xl">🛡️</span></div>
+                        <h4 class="text-xl font-bold text-white mb-3">Confiabilidade</h4>
+                    </div>
+                    <div class="card-bg p-8 rounded-2xl border-purple-500/30 bg-purple-900/10 hover:bg-purple-900/30 hover:border-purple-500 transition-all duration-300 group relative overflow-hidden h-full reveal reveal-delay-100">
+                        <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform relative z-10"><span class="text-3xl">🚀</span></div>
+                        <h4 class="text-xl font-bold text-white mb-3 relative z-10">Parceria Real</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resultados (Videos) -->
+        <section class="py-20 bg-[#161324] border-t border-white/5">
+            <div class="max-w-full mx-auto">
+                <div class="text-center px-4 mb-10 reveal">
+                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Veja Nossos Resultados</h3>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">Arraste para o lado para ver nossas produções.</p>
+                </div>
+                <div id="video-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-8 no-scrollbar cursor-grab active:cursor-grabbing reveal reveal-delay-200">
+                    <!-- Video 1 (Link Real - Comercial) -->
+                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
+                                <source src="https://i.imgur.com/LxUzJqm.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Comercial</h4>
+                            <p class="text-sm text-gray-300">Edição dinâmica</p>
+                        </div>
+                    </div>
+                    <!-- Video 2 (Placeholder) -->
+                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-50 transition-opacity pointer-events-none" style="background-image: url('https://placehold.co/360x640/333/3b82f6?text=Stories+Ads');"></div>
+                            <div class="w-16 h-16 rounded-full bg-blue-500/90 flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform cursor-pointer relative z-10 backdrop-blur-sm pointer-events-none"><svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Institucional</h4>
+                            <p class="text-sm text-gray-300">Branding e Valores</p>
+                        </div>
+                    </div>
+                    <!-- Video 3 (Link Real - Viral) -->
+                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
+                                <source src="https://i.imgur.com/Tc2WMCx.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Cortes Virais</h4>
+                            <p class="text-sm text-gray-300">Alta Retenção</p>
+                        </div>
+                    </div>
+                    <!-- Video 4 (Link Real - Motion) -->
+                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
+                                <source src="https://i.imgur.com/KwnNWB0.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Motion Graphics</h4>
+                            <p class="text-sm text-gray-300">Animação 3D</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Completos -->
+        <section id="servicos" class="py-20 md:py-28 bg-[#0d0a1b]">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h3 class="text-4xl md:text-5xl font-extrabold mb-6 reveal">Serviços Completos</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 auto-rows-fr">
+                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal">
+                        <p class="font-bold text-lg text-white mb-2">IA & Micro-SaaS</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-100">
+                        <p class="font-bold text-lg text-white mb-2">Tráfego Pago</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
+                        <p class="font-bold text-lg text-white mb-2">Social Media</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-300">
+                        <p class="font-bold text-lg text-white mb-2">Lançamento Digital</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal">
+                        <p class="font-bold text-lg text-white mb-2">Editor de Vídeo</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-100">
+                        <p class="font-bold text-lg text-white mb-2">Design</p>
+                    </div>
+                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
+                        <p class="font-bold text-lg text-white mb-2">Gestão Comercial</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Processos -->
+        <section class="py-20 bg-[#161324]">
+            <div class="max-w-7xl mx-auto px-4">
+                <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-16 reveal">Nossos Processos</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center card-bg p-10 rounded-2xl group reveal reveal-delay-100">
+                        <span class="text-6xl font-extrabold gradient-text block mb-6">1.</span>
+                        <h4 class="text-2xl font-bold mb-4">Pesquisa</h4>
+                    </div>
+                    <div class="text-center card-bg p-10 rounded-2xl group reveal reveal-delay-200">
+                        <span class="text-6xl font-extrabold gradient-text block mb-6">2.</span>
+                        <h4 class="text-2xl font-bold mb-4">Desenvolvimento</h4>
+                    </div>
+                    <div class="text-center card-bg p-10 rounded-2xl group reveal reveal-delay-300">
+                        <span class="text-6xl font-extrabold gradient-text block mb-6">3.</span>
+                        <h4 class="text-2xl font-bold mb-4">Suporte</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parceiros -->
+        <section class="py-20 bg-[#0d0a1b] border-t border-white/5 reveal">
+            <div class="max-w-7xl mx-auto px-4 text-center">
+                <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Parceiros de Sucesso</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Artmalte</span></div>
+                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Solarium</span></div>
+                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">New Fish</span></div>
+                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Donti Clinic</span></div>
+                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Riveliny</span></div>
+                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Favorita</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planos -->
+        <section id="planos" class="py-20 md:py-32 bg-[#161324]">
+            <div class="max-w-7xl mx-auto px-4">
+                <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-16 reveal">Escolha o Seu Plano</h3>
+                <div class="grid md:grid-cols-3 gap-8 items-start">
+                    <!-- Silver -->
+                    <div class="card-bg p-8 rounded-2xl flex flex-col items-center border-t-4 border-gray-400 group h-full hover:-translate-y-2 transition-all reveal">
+                        <h4 class="text-3xl font-bold mb-6 text-gray-400">SILVER</h4>
+                        <div class="price-wrapper mb-8"><span class="text-2xl font-bold text-gray-400 mr-1 mt-2">R$</span><span class="text-7xl font-extrabold gradient-text tracking-tighter">1.500</span></div>
+                        <ul class="text-left w-full space-y-4 mb-8 text-gray-300 flex-grow">
+                            <li>✔️ 12 Posts Feed/Stories</li>
+                            <li>✔️ 4 Vídeos Mensais</li>
+                            <li>✔️ 12 Conteúdos WhatsApp</li>
+                            <li class="opacity-50 text-gray-500 line-through">Tráfego Pago</li>
+                        </ul>
+                        <a href="#contato" class="w-full text-center btn-primary px-8 py-4 rounded-full font-bold shadow-lg mt-auto">Contratar</a>
+                    </div>
+                    <!-- Gold -->
+                    <div class="card-bg p-8 rounded-2xl flex flex-col items-center border-t-4 border-purple-500 transform scale-105 shadow-2xl shadow-purple-500/20 group h-full hover:-translate-y-2 transition-all reveal reveal-delay-100">
+                        <div class="absolute -top-4 bg-purple-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase">Mais Popular</div>
+                        <h4 class="text-4xl font-extrabold mb-6 text-purple-400">GOLD</h4>
+                        <div class="price-wrapper mb-8"><span class="text-2xl font-bold text-purple-400 mr-1 mt-2">R$</span><span class="text-7xl font-extrabold gradient-text tracking-tighter">3.500</span></div>
+                        <ul class="text-left w-full space-y-4 mb-8 text-gray-300 flex-grow">
+                            <li>✔️ Gestão Redes (Face/Insta)</li>
+                            <li>✔️ Tráfego META</li>
+                            <li>✔️ 20 Posts Feed/Stories</li>
+                            <li>✔️ 8 Vídeos Mensais</li>
+                            <li>✔️ 20 Conteúdos WhatsApp</li>
+                        </ul>
+                        <a href="#contato" class="w-full text-center btn-primary px-8 py-5 rounded-full font-bold text-xl shadow-2xl mt-auto">Contratar Gold</a>
+                    </div>
+                    <!-- Diamond -->
+                    <div class="card-bg p-8 rounded-2xl flex flex-col items-center border-t-4 border-blue-400 group h-full hover:-translate-y-2 transition-all reveal reveal-delay-200">
+                        <h4 class="text-3xl font-bold mb-6 text-blue-400">DIAMOND</h4>
+                        <div class="price-wrapper mb-8"><span class="text-2xl font-bold text-blue-400 mr-1 mt-2">R$</span><span class="text-7xl font-extrabold gradient-text tracking-tighter">5.000</span></div>
+                        <ul class="text-left w-full space-y-4 mb-8 text-gray-300 flex-grow">
+                            <li>✔️ Gestão Redes (+TikTok/Shorts)</li>
+                            <li>✔️ Tráfego COMPLETO</li>
+                            <li>✔️ 30 Posts Feed/Stories</li>
+                            <li>✔️ 15 Vídeos Mensais</li>
+                            <li>✔️ Site Profissional + Domínio</li>
+                        </ul>
+                        <a href="#contato" class="w-full text-center btn-primary px-8 py-4 rounded-full font-bold shadow-lg mt-auto">Contratar Diamond</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="py-20 bg-[#0d0a1b]">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+                <div class="text-center md:text-left reveal">
+                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Pronto para <span class="gradient-text">Escalar?</span></h3>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="https://wa.me/5500000000000" target="_blank" class="btn-primary px-8 py-4 text-lg rounded-full font-bold shadow-xl">WhatsApp</a>
+                        <a href="mailto:contato@evoluadigital.com" class="px-8 py-4 text-lg rounded-full font-bold text-white border border-purple-500/50 hover:bg-purple-500/20">E-mail</a>
+                    </div>
+                </div>
+                <div class="card-bg p-8 rounded-3xl shadow-2xl border border-white/10 reveal reveal-delay-200">
+                    <form class="space-y-5">
+                        <input type="text" placeholder="Nome" class="w-full px-5 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-purple-500">
+                        <input type="email" placeholder="E-mail" class="w-full px-5 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-purple-500">
+                        <input type="tel" placeholder="Telefone" class="w-full px-5 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-purple-500">
+                        <select class="w-full px-5 py-3 rounded-lg bg-white/5 text-white focus:outline-none focus:border-purple-500"><option class="bg-[#211e38]">Motivo...</option><option class="bg-[#211e38]">Orçamento</option></select>
+                        <button class="w-full btn-primary py-4 rounded-lg font-bold text-lg">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="p-10 text-center text-sm text-gray-500 border-t border-white/5 bg-[#0d0a1b]"><p>&copy; 2024 Evolua Digital.</p></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            const slider = document.getElementById('video-carousel');
+            if(slider){
+                let isDown = false, startX, scrollLeft;
+                slider.addEventListener('mousedown', (e) => { isDown = true; slider.classList.add('cursor-grabbing'); startX = e.pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; });
+                slider.addEventListener('mouseleave', () => { isDown = false; slider.classList.remove('cursor-grabbing'); });
+                slider.addEventListener('mouseup', () => { isDown = false; slider.classList.remove('cursor-grabbing'); });
+                slider.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - slider.offsetLeft; const walk = (x - startX) * 2; slider.scrollLeft = scrollLeft - walk; });
+            }
+        });
+    </script>
+</body>
+</html>
