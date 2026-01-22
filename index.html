@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,44 +104,10 @@
                     <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Veja Nossos Resultados</h3>
                     <p class="text-xl text-gray-400 max-w-3xl mx-auto">Arraste para o lado para ver nossas produções.</p>
                 </div>
-                <div id="video-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-8 no-scrollbar cursor-grab active:cursor-grabbing reveal reveal-delay-200">
-                    <!-- Video 1 (Link Real - Comercial) -->
-                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
-                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
-                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
-                                <source src="https://i.imgur.com/LxUzJqm.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
-                            <h4 class="font-bold text-lg text-white mb-1">Comercial</h4>
-                            <p class="text-sm text-gray-300">Edição dinâmica</p>
-                        </div>
-                    </div>
-                    <!-- Video 2 (Link Real - Institucional) -->
-                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
-                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
-                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
-                                <source src="https://i.imgur.com/t2yHoOT.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
-                            <h4 class="font-bold text-lg text-white mb-1">Institucional</h4>
-                            <p class="text-sm text-gray-300">Branding e Valores</p>
-                        </div>
-                    </div>
-                    <!-- Video 3 (Link Real - Viral) -->
-                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
-                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
-                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
-                                <source src="https://i.imgur.com/Tc2WMCx.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
-                            <h4 class="font-bold text-lg text-white mb-1">Cortes Virais</h4>
-                            <p class="text-sm text-gray-300">Alta Retenção</p>
-                        </div>
-                    </div>
-                    <!-- Video 4 (Link Real - Motion) -->
+                <!-- ADICIONADO class="scroll-smooth" e JS atualizado para melhor UX -->
+                <div id="video-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-8 no-scrollbar cursor-grab active:cursor-grabbing reveal reveal-delay-200 scroll-smooth">
+                    
+                    <!-- Video 1 - Motion Graphics (Link Real) -->
                     <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
                             <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
@@ -153,7 +119,21 @@
                             <p class="text-sm text-gray-300">Animação 3D</p>
                         </div>
                     </div>
-                    <!-- Video 5 (Link Real - Cobertura) -->
+
+                    <!-- Video 2 - Comercial (Link Real) -->
+                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
+                                <source src="https://i.imgur.com/LxUzJqm.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Comercial</h4>
+                            <p class="text-sm text-gray-300">Edição dinâmica</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 3 - Cobertura (Link Real) -->
                      <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
                             <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
@@ -165,6 +145,33 @@
                             <p class="text-sm text-gray-300">Captação Profissional</p>
                         </div>
                     </div>
+
+                    <!-- Video 4 - Institucional (Link Real - CORRIGIDO) -->
+                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
+                                <source src="https://i.imgur.com/t2yHoOT.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Institucional</h4>
+                            <p class="text-sm text-gray-300">Branding e Valores</p>
+                        </div>
+                    </div>
+
+                    <!-- Video 5 - Viral (Link Real) -->
+                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
+                                <source src="https://i.imgur.com/Tc2WMCx.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Cortes Virais</h4>
+                            <p class="text-sm text-gray-300">Alta Retenção</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -338,10 +345,30 @@
             const slider = document.getElementById('video-carousel');
             if(slider){
                 let isDown = false, startX, scrollLeft;
-                slider.addEventListener('mousedown', (e) => { isDown = true; slider.classList.add('cursor-grabbing'); startX = e.pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; });
-                slider.addEventListener('mouseleave', () => { isDown = false; slider.classList.remove('cursor-grabbing'); });
-                slider.addEventListener('mouseup', () => { isDown = false; slider.classList.remove('cursor-grabbing'); });
-                slider.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - slider.offsetLeft; const walk = (x - startX) * 2; slider.scrollLeft = scrollLeft - walk; });
+                slider.addEventListener('mousedown', (e) => { 
+                    isDown = true; 
+                    slider.classList.add('cursor-grabbing'); 
+                    slider.classList.remove('cursor-grab', 'scroll-smooth', 'snap-x'); // Remove snap and smooth scroll during drag
+                    startX = e.pageX - slider.offsetLeft; 
+                    scrollLeft = slider.scrollLeft; 
+                });
+                
+                const stopDrag = () => {
+                    isDown = false; 
+                    slider.classList.remove('cursor-grabbing'); 
+                    slider.classList.add('cursor-grab', 'scroll-smooth', 'snap-x'); // Add back snap and smooth scroll
+                };
+
+                slider.addEventListener('mouseleave', stopDrag);
+                slider.addEventListener('mouseup', stopDrag);
+                
+                slider.addEventListener('mousemove', (e) => { 
+                    if (!isDown) return; 
+                    e.preventDefault(); 
+                    const x = e.pageX - slider.offsetLeft; 
+                    const walk = (x - startX) * 1.5; // Adjusted speed factor
+                    slider.scrollLeft = scrollLeft - walk; 
+                });
             }
         });
     </script>
