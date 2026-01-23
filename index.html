@@ -6,6 +6,8 @@
     <title>Evolua Digital | Marketing, Vendas e Inteligência Artificial</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome (Ícones) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Fonte Inter -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
@@ -32,6 +34,16 @@
         #mobile-menu { transition: transform 0.3s ease-in-out; }
         #mobile-menu.hidden { transform: translateX(100%); }
         #mobile-menu.flex { transform: translateX(0); }
+
+        /* Animação Pulse do WhatsApp */
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-pulse {
+            animation: pulse-green 2s infinite;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -396,9 +408,10 @@
             <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div class="text-center md:text-left reveal">
                     <h3 class="text-3xl md:text-5xl font-extrabold mb-6">Pronto para <span class="gradient-text">Escalar?</span></h3>
-                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
-                        <a href="https://wa.me/5500000000000" target="_blank" class="btn-primary px-8 py-4 text-lg rounded-full font-bold shadow-xl">WhatsApp</a>
-                        <a href="mailto:contato@evoluadigital.com" class="px-8 py-4 text-lg rounded-full font-bold text-white border border-purple-500/50 hover:bg-purple-500/20">E-mail</a>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start">
+                        <a href="https://wa.me/5511915912846" target="_blank" class="btn-primary px-10 py-4 text-lg rounded-full font-bold shadow-xl hover:shadow-green-500/20 flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-2xl"></i> Chamar no WhatsApp
+                        </a>
                     </div>
                 </div>
                 <div class="card-bg p-6 md:p-8 rounded-3xl shadow-2xl border border-white/10 reveal reveal-delay-200">
@@ -414,6 +427,12 @@
         </section>
     </main>
     <footer class="p-10 text-center text-sm text-gray-500 border-t border-white/5 bg-[#0d0a1b]"><p>&copy; 2024 Evolua Digital.</p></footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511915912846" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:bg-[#128C7E] hover:scale-110 transition-all duration-300 group whatsapp-pulse">
+        <i class="fab fa-whatsapp text-4xl group-hover:rotate-12 transition-transform"></i>
+    </a>
+
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
