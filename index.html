@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evolua Digital | Marketing, Vendas e Inteligência Artificial</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonte Inter -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0d0a1b; color: #f3f4f6; overflow-x: hidden; }
@@ -14,46 +16,81 @@
         .card-bg { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .hero-bg { background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.1) 30%, #0d0a1b 80%); min-height: 60vh; }
         .price-wrapper { display: flex; justify-content: center; align-items: flex-start; line-height: 1; }
+        
+        /* Utilitários de Scroll */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Animação Reveal */
         .reveal { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.5, 0, 0, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .reveal-delay-100 { transition-delay: 0.1s; }
         .reveal-delay-200 { transition-delay: 0.2s; }
         .reveal-delay-300 { transition-delay: 0.3s; }
+        
+        /* Menu Mobile */
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        #mobile-menu.hidden { transform: translateX(100%); }
+        #mobile-menu.flex { transform: translateX(0); }
     </style>
 </head>
 <body class="antialiased">
-    <header class="p-4 md:px-8 sticky top-0 z-50 bg-black/80 backdrop-blur-sm shadow-xl border-b border-white/5 reveal active">
+
+    <!-- Navbar -->
+    <header class="p-4 md:px-8 sticky top-0 z-50 bg-black/90 backdrop-blur-sm shadow-xl border-b border-white/5 reveal active">
         <nav class="flex justify-between items-center max-w-7xl mx-auto">
-            <a href="#" class="flex items-center hover:opacity-90 transition-opacity">
-                <!-- LOGO NOVA (TAMANHO AUMENTADO) -->
+            <a href="#" class="flex items-center hover:opacity-90 transition-opacity z-50">
                 <img src="https://i.imgur.com/UbZQhwT.png" alt="Logo Evolua Digital" class="h-16 md:h-24 w-auto object-contain">
             </a>
-            <a href="#contato" class="btn-primary px-6 py-2 rounded-full font-semibold shadow-lg">Fale Conosco</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#quem-somos" class="text-sm font-medium hover:text-purple-400 transition-colors">Quem Somos</a>
+                <a href="#diferenciais" class="text-sm font-medium hover:text-purple-400 transition-colors">Diferenciais</a>
+                <a href="#resultados" class="text-sm font-medium hover:text-purple-400 transition-colors">Resultados</a>
+                <a href="#servicos" class="text-sm font-medium hover:text-purple-400 transition-colors">Serviços</a>
+                <a href="#planos" class="text-sm font-medium hover:text-purple-400 transition-colors">Planos</a>
+                <a href="#contato" class="btn-primary px-6 py-2 rounded-full font-semibold shadow-lg text-sm">Fale Conosco</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden z-50 text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-[#0d0a1b] z-40 hidden flex-col items-center justify-center space-y-8 h-screen w-screen">
+            <a href="#quem-somos" class="text-2xl font-bold hover:text-purple-400" onclick="toggleMenu()">Quem Somos</a>
+            <a href="#diferenciais" class="text-2xl font-bold hover:text-purple-400" onclick="toggleMenu()">Diferenciais</a>
+            <a href="#resultados" class="text-2xl font-bold hover:text-purple-400" onclick="toggleMenu()">Resultados</a>
+            <a href="#servicos" class="text-2xl font-bold hover:text-purple-400" onclick="toggleMenu()">Serviços</a>
+            <a href="#planos" class="text-2xl font-bold hover:text-purple-400" onclick="toggleMenu()">Planos</a>
+            <a href="#contato" class="btn-primary px-10 py-4 rounded-full font-bold text-xl" onclick="toggleMenu()">Fale Conosco</a>
+        </div>
     </header>
+
     <main>
         <!-- Hero -->
-        <section class="py-20 md:py-32 text-center hero-bg relative overflow-hidden">
+        <section class="py-16 md:py-32 text-center hero-bg relative overflow-hidden">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-purple-500/10 to-transparent pointer-events-none"></div>
             <div class="max-w-4xl mx-auto px-4 relative z-10">
-                <p class="text-lg uppercase tracking-[0.2em] font-medium text-purple-400 mb-6 animate-pulse reveal">Marketing, Performance e Vendas</p>
-                <h2 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8 reveal reveal-delay-100">Seu Negócio Escalonado com a Potência da <br><span class="gradient-text">Inteligência Artificial</span></h2>
-                <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-200">A Evolua Digital utiliza <span class="font-bold text-white">IA e Micro-SaaS</span> para otimizar campanhas, atrair leads e unificar marketing e comercial.</p>
+                <p class="text-sm md:text-lg uppercase tracking-[0.2em] font-medium text-purple-400 mb-6 animate-pulse reveal">Marketing, Performance e Vendas</p>
+                <h2 class="text-4xl md:text-7xl font-extrabold leading-tight mb-8 reveal reveal-delay-100">Seu Negócio Escalonado com a Potência da <br><span class="gradient-text">Inteligência Artificial</span></h2>
+                <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed reveal reveal-delay-200">A Evolua Digital utiliza <span class="font-bold text-white">IA e Micro-SaaS</span> para otimizar campanhas, atrair leads e unificar marketing e comercial.</p>
                 <div class="reveal reveal-delay-300">
-                    <a href="#servicos" class="btn-primary px-10 py-5 text-xl rounded-full font-bold shadow-2xl shadow-purple-500/40 inline-block">Quero Evoluir Meu Negócio</a>
+                    <a href="#contato" class="btn-primary px-8 py-4 text-lg md:text-xl rounded-full font-bold shadow-2xl shadow-purple-500/40 inline-block">Quero Evoluir Meu Negócio</a>
                 </div>
             </div>
         </section>
 
         <!-- Quem Somos -->
-        <section id="quem-somos" class="py-20 bg-[#161324]">
-            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Quem Somos e <br><span class="text-purple-400">Nosso Propósito</span></h3>
-                    <p class="text-gray-300 text-lg mb-6 leading-relaxed">Nossa empresa tem como foco a construção de uma marca forte com o propósito de <strong class="text-white">melhorar o relacionamento com os clientes</strong> e <strong class="text-white">ampliar o potencial de ganhos</strong>.</p>
-                    <p class="text-gray-300 text-lg mb-8 leading-relaxed">Entregamos soluções completas que geram <strong class="text-white">resultados reais e consistentes</strong> através de uma operação unificada.</p>
+        <section id="quem-somos" class="py-16 md:py-20 bg-[#161324]">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="reveal text-center md:text-left">
+                    <h3 class="text-3xl md:text-5xl font-extrabold mb-6">Quem Somos e <br><span class="text-purple-400">Nosso Propósito</span></h3>
+                    <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed">Nossa empresa tem como foco a construção de uma marca forte com o propósito de <strong class="text-white">melhorar o relacionamento com os clientes</strong> e <strong class="text-white">ampliar o potencial de ganhos</strong>.</p>
+                    <p class="text-gray-300 text-base md:text-lg mb-8 leading-relaxed">Entregamos soluções completas que geram <strong class="text-white">resultados reais e consistentes</strong> através de uma operação unificada.</p>
                 </div>
                 <div class="hidden md:block relative reveal reveal-delay-200">
                     <div class="absolute -inset-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl opacity-30 blur-lg"></div>
@@ -65,50 +102,54 @@
         </section>
 
         <!-- Diferenciais -->
-        <section class="py-20 bg-[#0d0a1b] relative overflow-hidden">
+        <section id="diferenciais" class="py-16 md:py-20 bg-[#0d0a1b] relative overflow-hidden">
             <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-purple-900/10 to-transparent pointer-events-none"></div>
             <div class="max-w-7xl mx-auto px-4 relative z-10">
-                <div class="text-center mb-16 reveal">
-                    <h3 class="text-4xl md:text-5xl font-extrabold mb-4">Por que escolher a <span class="gradient-text">Evolua?</span></h3>
-                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">Somos parceiros estratégicos focados no seu crescimento.</p>
+                <div class="text-center mb-10 md:mb-16 reveal">
+                    <h3 class="text-3xl md:text-5xl font-extrabold mb-4">Por que escolher a <span class="gradient-text">Evolua?</span></h3>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Somos parceiros estratégicos focados no seu crescimento.</p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal reveal-delay-100">
+                <div class="flex md:grid md:grid-cols-4 gap-6 overflow-x-auto snap-x snap-mandatory pb-8 px-4 md:px-0 no-scrollbar drag-scroll">
+                    <!-- Card 1 -->
+                    <div class="flex-shrink-0 w-72 md:w-auto snap-center card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal">
                         <div class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors"><span class="text-3xl">⚡</span></div>
                         <h4 class="text-xl font-bold text-white mb-3">Expertise Técnica</h4>
                         <p class="text-gray-400 text-sm leading-relaxed">Conhecimento especializado em ferramentas de IA e estratégias de alta performance.</p>
                     </div>
-                    <div class="card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal reveal-delay-200">
+                    <!-- Card 2 -->
+                    <div class="flex-shrink-0 w-72 md:w-auto snap-center card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal">
                         <div class="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors"><span class="text-3xl">🎯</span></div>
                         <h4 class="text-xl font-bold text-white mb-3">Foco no Cliente</h4>
                         <p class="text-gray-400 text-sm leading-relaxed">Abordagem centrada em você, criando soluções personalizadas para suas dores reais.</p>
                     </div>
-                    <div class="card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal reveal-delay-300">
+                    <!-- Card 3 -->
+                    <div class="flex-shrink-0 w-72 md:w-auto snap-center card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal">
                         <div class="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors"><span class="text-3xl">🛡️</span></div>
                         <h4 class="text-xl font-bold text-white mb-3">Confiabilidade</h4>
                         <p class="text-gray-400 text-sm leading-relaxed">Foco total na qualidade, segurança e entrega de resultados consistentes.</p>
                     </div>
-                    <div class="card-bg p-8 rounded-2xl border-purple-500/30 bg-purple-900/10 hover:bg-purple-900/30 hover:border-purple-500 transition-all duration-300 group relative overflow-hidden h-full reveal reveal-delay-100">
-                        <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform relative z-10"><span class="text-3xl">🚀</span></div>
-                        <h4 class="text-xl font-bold text-white mb-3 relative z-10">Parceria Real</h4>
-                        <p class="text-gray-300 text-sm leading-relaxed font-medium relative z-10">"Nosso negócio é vender o seu." Atenção ao longo prazo e suporte contínuo.</p>
+                    <!-- Card 4 (CORRIGIDO: Removido fundo roxo fixo) -->
+                    <div class="flex-shrink-0 w-72 md:w-auto snap-center card-bg p-8 rounded-2xl hover:bg-purple-900/20 hover:border-purple-500/50 transition-all duration-300 group h-full reveal">
+                        <div class="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors"><span class="text-3xl">🚀</span></div>
+                        <h4 class="text-xl font-bold text-white mb-3">Parceria Real</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">"Nosso negócio é vender o seu." Atenção ao longo prazo e suporte contínuo.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Resultados (Videos) -->
-        <section class="py-20 bg-[#161324] border-t border-white/5">
+        <section id="resultados" class="py-16 md:py-20 bg-[#161324] border-t border-white/5">
             <div class="max-w-full mx-auto">
                 <div class="text-center px-4 mb-10 reveal">
-                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Veja Nossos Resultados</h3>
-                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">Arraste para o lado para ver nossas produções.</p>
+                    <h3 class="text-3xl md:text-5xl font-extrabold mb-6">Veja Nossos Resultados</h3>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">Arraste para o lado para ver nossas produções.</p>
                 </div>
-                <!-- ADICIONADO class="scroll-smooth" e JS atualizado para melhor UX -->
-                <div id="video-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-8 no-scrollbar cursor-grab active:cursor-grabbing reveal reveal-delay-200 scroll-smooth">
+                <!-- Carrossel de Vídeos -->
+                <div id="video-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-8 no-scrollbar cursor-grab active:cursor-grabbing reveal reveal-delay-200 scroll-smooth drag-scroll">
                     
                     <!-- Video 1 - Motion Graphics (Link Real) -->
-                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                    <div class="flex-shrink-0 w-72 md:w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
                             <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
                                 <source src="https://i.imgur.com/KwnNWB0.mp4" type="video/mp4">
@@ -121,7 +162,7 @@
                     </div>
 
                     <!-- Video 2 - Comercial (Link Real) -->
-                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                    <div class="flex-shrink-0 w-72 md:w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
                             <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
                                 <source src="https://i.imgur.com/LxUzJqm.mp4" type="video/mp4">
@@ -134,7 +175,7 @@
                     </div>
 
                     <!-- Video 3 - Cobertura (Link Real) -->
-                     <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                     <div class="flex-shrink-0 w-72 md:w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
                             <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
                                 <source src="https://i.imgur.com/TTyUubf.mp4" type="video/mp4">
@@ -146,8 +187,8 @@
                         </div>
                     </div>
 
-                    <!-- Video 4 - Institucional (Link Real - CORRIGIDO) -->
-                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                    <!-- Video 4 - Institucional (LINK CORRIGIDO) -->
+                    <div class="flex-shrink-0 w-72 md:w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
                             <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
                                 <source src="https://i.imgur.com/t2yHoOT.mp4" type="video/mp4">
@@ -160,7 +201,7 @@
                     </div>
 
                     <!-- Video 5 - Viral (Link Real) -->
-                    <div class="flex-shrink-0 w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                    <div class="flex-shrink-0 w-72 md:w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
                             <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
                                 <source src="https://i.imgur.com/Tc2WMCx.mp4" type="video/mp4">
@@ -177,48 +218,48 @@
         </section>
 
         <!-- Serviços Completos -->
-        <section id="servicos" class="py-20 md:py-28 bg-[#0d0a1b]">
+        <section id="servicos" class="py-16 md:py-28 bg-[#0d0a1b]">
             <div class="max-w-7xl mx-auto px-4 text-center">
-                <h3 class="text-4xl md:text-5xl font-extrabold mb-6 reveal">Serviços Completos</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 auto-rows-fr">
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13.5m-11-2.5v7l-12-3v-7m11 2.5V6m-12 10.5V9m0-3l12 3m-12 3l12 3m0-11.5l-12 3"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">IA & Micro-SaaS</p>
+                <h3 class="text-3xl md:text-5xl font-extrabold mb-6 reveal">Serviços Completos</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-fr">
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13.5m-11-2.5v7l-12-3v-7m11 2.5V6m-12 10.5V9m0-3l12 3m-12 3l12 3m0-11.5l-12 3"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">IA & Micro-SaaS</p>
                         <small class="text-gray-400 text-xs">Otimização preditiva e automação</small>
                     </div>
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-100">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8m-3 7H7a4 4 0 01-4-4V7a4 4 0 014-4h4a4 4 0 014 4v4m-8-2h4"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">Tráfego Pago</p>
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-100">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8m-3 7H7a4 4 0 01-4-4V7a4 4 0 014-4h4a4 4 0 014 4v4m-8-2h4"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Tráfego Pago</p>
                         <small class="text-gray-400 text-xs">Meta, Google e TikTok Ads</small>
                     </div>
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-6 10h.01M19 12a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">Social Media</p>
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-6 10h.01M19 12a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Social Media</p>
                         <small class="text-gray-400 text-xs">Gestão estratégica de conteúdo</small>
                     </div>
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-300">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16 8a6 6 0 016 6v0a6 6 0 01-6 6v0a6 6 0 01-6-6v0a6 6 0 016-6v0z"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">Lançamento Digital</p>
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-300">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16 8a6 6 0 016 6v0a6 6 0 01-6 6v0a6 6 0 01-6-6v0a6 6 0 016-6v0z"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Lançamento Digital</p>
                         <small class="text-gray-400 text-xs">Estratégias para escalar vendas</small>
                     </div>
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">Editor de Vídeo</p>
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Editor de Vídeo</p>
                         <small class="text-gray-400 text-xs">Edição dinâmica e Motion</small>
                     </div>
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-100">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">Design</p>
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-100">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Design</p>
                         <small class="text-gray-400 text-xs">Identidade Visual e Criativos</small>
                     </div>
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">Micro-SaaS</p>
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Micro-SaaS</p>
                         <small class="text-gray-400 text-xs">Ferramentas de escala</small>
                     </div>
-                    <div class="card-bg p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
-                        <svg class="w-10 h-10 mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.5V19.5M19.5 12H4.5M18 10a2 2 0 012 2v2m-4-2a2 2 0 012 2v2M6 10a2 2 0 012 2v2m-4-2a2 2 0 012 2v2"></path></svg>
-                        <p class="font-bold text-lg text-white mb-2">Gestão Comercial</p>
+                    <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-200">
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.5V19.5M19.5 12H4.5M18 10a2 2 0 012 2v2m-4-2a2 2 0 012 2v2M6 10a2 2 0 012 2v2m-4-2a2 2 0 012 2v2"></path></svg>
+                        <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Gestão Comercial</p>
                         <small class="text-gray-400 text-xs">Estruturação de funil e vendas</small>
                     </div>
                 </div>
@@ -226,21 +267,21 @@
         </section>
 
         <!-- Processos -->
-        <section class="py-20 bg-[#161324]">
+        <section class="py-16 md:py-20 bg-[#161324]">
             <div class="max-w-7xl mx-auto px-4">
-                <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-16 reveal">Nossos Processos</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center card-bg p-10 rounded-2xl group reveal reveal-delay-100">
+                <h3 class="text-3xl md:text-5xl font-extrabold text-center mb-10 md:mb-16 reveal">Nossos Processos</h3>
+                <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pb-8 px-4 md:px-0 no-scrollbar drag-scroll">
+                    <div class="flex-shrink-0 w-72 md:w-auto snap-center text-center card-bg p-10 rounded-2xl group reveal">
                         <span class="text-6xl font-extrabold gradient-text block mb-6">1.</span>
                         <h4 class="text-2xl font-bold mb-4">Pesquisa e <br> Planejamento</h4>
                         <p class="text-gray-400">Mergulhamos no seu negócio. Analisamos concorrentes, definimos o perfil do cliente ideal (ICP) e traçamos as metas para criar uma base sólida.</p>
                     </div>
-                    <div class="text-center card-bg p-10 rounded-2xl group reveal reveal-delay-200">
+                    <div class="flex-shrink-0 w-72 md:w-auto snap-center text-center card-bg p-10 rounded-2xl group reveal">
                         <span class="text-6xl font-extrabold gradient-text block mb-6">2.</span>
                         <h4 class="text-2xl font-bold mb-4">Desenvolvimento e <br> Execução</h4>
                         <p class="text-gray-400">Colocamos a mão na massa. Criação de identidade visual, setup de campanhas, automação de processos e produção de conteúdo de alta conversão.</p>
                     </div>
-                    <div class="text-center card-bg p-10 rounded-2xl group reveal reveal-delay-300">
+                    <div class="flex-shrink-0 w-72 md:w-auto snap-center text-center card-bg p-10 rounded-2xl group reveal">
                         <span class="text-6xl font-extrabold gradient-text block mb-6">3.</span>
                         <h4 class="text-2xl font-bold mb-4">Análise e <br> Otimização</h4>
                         <p class="text-gray-400">O trabalho não para. Monitoramos métricas em tempo real, ajustamos rotas para maximizar o ROI e garantimos que sua empresa continue escalando.</p>
@@ -250,24 +291,24 @@
         </section>
 
         <!-- Parceiros -->
-        <section class="py-20 bg-[#0d0a1b] border-t border-white/5 reveal">
+        <section class="py-16 md:py-20 bg-[#0d0a1b] border-t border-white/5 reveal">
             <div class="max-w-7xl mx-auto px-4 text-center">
-                <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Parceiros de Sucesso</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Artmalte</span></div>
-                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Solarium</span></div>
-                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">New Fish</span></div>
-                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Donti Clinic</span></div>
-                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Riveliny</span></div>
-                    <div class="bg-white/5 p-6 rounded-lg flex items-center justify-center border border-white/5"><span class="text-gray-300 font-bold">Favorita</span></div>
+                <h3 class="text-3xl md:text-5xl font-extrabold mb-6">Parceiros de Sucesso</h3>
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-6">
+                    <div class="bg-white/5 p-4 md:p-6 rounded-lg flex items-center justify-center border border-white/5 text-xs md:text-base"><span class="text-gray-300 font-bold">Artmalte</span></div>
+                    <div class="bg-white/5 p-4 md:p-6 rounded-lg flex items-center justify-center border border-white/5 text-xs md:text-base"><span class="text-gray-300 font-bold">Solarium</span></div>
+                    <div class="bg-white/5 p-4 md:p-6 rounded-lg flex items-center justify-center border border-white/5 text-xs md:text-base"><span class="text-gray-300 font-bold">New Fish</span></div>
+                    <div class="bg-white/5 p-4 md:p-6 rounded-lg flex items-center justify-center border border-white/5 text-xs md:text-base"><span class="text-gray-300 font-bold">Donti Clinic</span></div>
+                    <div class="bg-white/5 p-4 md:p-6 rounded-lg flex items-center justify-center border border-white/5 text-xs md:text-base"><span class="text-gray-300 font-bold">Riveliny</span></div>
+                    <div class="bg-white/5 p-4 md:p-6 rounded-lg flex items-center justify-center border border-white/5 text-xs md:text-base"><span class="text-gray-300 font-bold">Favorita</span></div>
                 </div>
             </div>
         </section>
 
         <!-- Planos -->
-        <section id="planos" class="py-20 md:py-32 bg-[#161324]">
+        <section id="planos" class="py-16 md:py-32 bg-[#161324]">
             <div class="max-w-7xl mx-auto px-4">
-                <h3 class="text-4xl md:text-5xl font-extrabold text-center mb-16 reveal">Escolha o Seu Plano</h3>
+                <h3 class="text-3xl md:text-5xl font-extrabold text-center mb-10 md:mb-16 reveal">Escolha o Seu Plano</h3>
                 <div class="grid md:grid-cols-3 gap-8 items-start">
                     <!-- Silver -->
                     <div class="card-bg p-8 rounded-2xl flex flex-col items-center border-t-4 border-gray-400 group h-full hover:-translate-y-2 transition-all reveal">
@@ -313,16 +354,16 @@
         </section>
 
         <!-- Contato -->
-        <section id="contato" class="py-20 bg-[#0d0a1b]">
-            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+        <section id="contato" class="py-16 md:py-20 bg-[#0d0a1b]">
+            <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div class="text-center md:text-left reveal">
-                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6">Pronto para <span class="gradient-text">Escalar?</span></h3>
+                    <h3 class="text-3xl md:text-5xl font-extrabold mb-6">Pronto para <span class="gradient-text">Escalar?</span></h3>
                     <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
                         <a href="https://wa.me/5500000000000" target="_blank" class="btn-primary px-8 py-4 text-lg rounded-full font-bold shadow-xl">WhatsApp</a>
                         <a href="mailto:contato@evoluadigital.com" class="px-8 py-4 text-lg rounded-full font-bold text-white border border-purple-500/50 hover:bg-purple-500/20">E-mail</a>
                     </div>
                 </div>
-                <div class="card-bg p-8 rounded-3xl shadow-2xl border border-white/10 reveal reveal-delay-200">
+                <div class="card-bg p-6 md:p-8 rounded-3xl shadow-2xl border border-white/10 reveal reveal-delay-200">
                     <form class="space-y-5">
                         <input type="text" placeholder="Nome" class="w-full px-5 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-purple-500">
                         <input type="email" placeholder="E-mail" class="w-full px-5 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:border-purple-500">
@@ -336,40 +377,22 @@
     </main>
     <footer class="p-10 text-center text-sm text-gray-500 border-t border-white/5 bg-[#0d0a1b]"><p>&copy; 2024 Evolua Digital.</p></footer>
     <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function toggleMenu() { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); document.body.classList.toggle('overflow-hidden'); }
+        menuBtn.addEventListener('click', toggleMenu);
         document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
-            }, { threshold: 0.1 });
+            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-            const slider = document.getElementById('video-carousel');
-            if(slider){
+            const sliders = document.querySelectorAll('.drag-scroll');
+            sliders.forEach(slider => {
                 let isDown = false, startX, scrollLeft;
-                slider.addEventListener('mousedown', (e) => { 
-                    isDown = true; 
-                    slider.classList.add('cursor-grabbing'); 
-                    slider.classList.remove('cursor-grab', 'scroll-smooth', 'snap-x'); // Remove snap and smooth scroll during drag
-                    startX = e.pageX - slider.offsetLeft; 
-                    scrollLeft = slider.scrollLeft; 
-                });
-                
-                const stopDrag = () => {
-                    isDown = false; 
-                    slider.classList.remove('cursor-grabbing'); 
-                    slider.classList.add('cursor-grab', 'scroll-smooth', 'snap-x'); // Add back snap and smooth scroll
-                };
-
+                slider.addEventListener('mousedown', (e) => { isDown = true; slider.classList.add('cursor-grabbing'); slider.classList.remove('cursor-grab', 'scroll-smooth', 'snap-x'); startX = e.pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; });
+                const stopDrag = () => { isDown = false; slider.classList.remove('cursor-grabbing'); slider.classList.add('cursor-grab', 'scroll-smooth', 'snap-x'); };
                 slider.addEventListener('mouseleave', stopDrag);
                 slider.addEventListener('mouseup', stopDrag);
-                
-                slider.addEventListener('mousemove', (e) => { 
-                    if (!isDown) return; 
-                    e.preventDefault(); 
-                    const x = e.pageX - slider.offsetLeft; 
-                    const walk = (x - startX) * 1.5; // Adjusted speed factor
-                    slider.scrollLeft = scrollLeft - walk; 
-                });
-            }
+                slider.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - slider.offsetLeft; const walk = (x - startX) * 1.5; slider.scrollLeft = scrollLeft - walk; });
+            });
         });
     </script>
 </body>
