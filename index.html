@@ -52,7 +52,8 @@
     <header class="p-4 md:px-8 sticky top-0 z-50 bg-black/90 backdrop-blur-sm shadow-xl border-b border-white/5 reveal active">
         <nav class="flex justify-between items-center max-w-7xl mx-auto">
             <a href="#" class="flex items-center hover:opacity-90 transition-opacity z-50">
-                <img src="https://i.imgur.com/UbZQhwT.png" alt="Logo Evolua Digital" class="h-16 md:h-24 w-auto object-contain">
+                <!-- LOGO MAIOR (Com scale para "cropar" o espaço vazio) -->
+                <img src="https://i.imgur.com/9TvcGoB.png" alt="Logo Evolua Digital" class="h-16 md:h-20 w-auto object-contain transform scale-125 md:scale-150 origin-left">
             </a>
             
             <!-- Desktop Menu -->
@@ -172,6 +173,19 @@
                 <!-- Carrossel de Vídeos -->
                 <div id="video-carousel" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 px-8 no-scrollbar cursor-grab active:cursor-grabbing reveal reveal-delay-200 scroll-smooth drag-scroll">
                     
+                    <!-- Video 0 - Novo Destaque (Link Real) -->
+                    <div class="flex-shrink-0 w-72 md:w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
+                        <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
+                            <video class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none" autoplay loop muted playsinline>
+                                <source src="https://i.imgur.com/1qUne8Z.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="p-4 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent pt-10 pointer-events-none">
+                            <h4 class="font-bold text-lg text-white mb-1">Destaque</h4>
+                            <p class="text-sm text-gray-300">Produção Premium</p>
+                        </div>
+                    </div>
+
                     <!-- Video 1 - Motion Graphics (Link Real) -->
                     <div class="flex-shrink-0 w-72 md:w-80 snap-center bg-[#0d0a1b] rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-purple-500/50 transition-all duration-300 group relative select-none">
                         <div class="relative w-full aspect-[9/16] bg-gray-800 flex items-center justify-center overflow-hidden">
@@ -262,7 +276,7 @@
                         <small class="text-gray-400 text-xs">Gestão estratégica de conteúdo</small>
                     </div>
                     <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-300">
-                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16 8a6 6 0 016 6v0a6 6 0 01-6 6v0a6 6 0 016-6v0z"></path></svg>
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16 8a6 6 0 016 6v0a6 6 0 01-6 6v0a6 6 0 01-6-6v0a6 6 0 016-6v0z"></path></svg>
                         <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Lançamento Digital</p>
                         <small class="text-gray-400 text-xs">Estratégias para escalar vendas</small>
                     </div>
@@ -272,7 +286,7 @@
                         <small class="text-gray-400 text-xs">Edição dinâmica e Motion</small>
                     </div>
                     <div class="card-bg p-4 md:p-6 rounded-xl shadow-lg hover:shadow-purple-500/60 hover:-translate-y-2 cursor-pointer group flex flex-col items-center justify-center h-full reveal reveal-delay-100">
-                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                        <svg class="w-8 h-8 md:w-10 md:h-10 mb-2 md:mb-4 text-purple-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
                         <p class="font-bold text-base md:text-lg text-white mb-1 md:mb-2">Design</p>
                         <small class="text-gray-400 text-xs">Identidade Visual e Criativos</small>
                     </div>
@@ -318,7 +332,6 @@
         <section class="py-16 md:py-20 bg-[#0d0a1b] border-t border-white/5 reveal">
             <div class="max-w-7xl mx-auto px-4 text-center">
                 <h3 class="text-3xl md:text-5xl font-extrabold mb-10 md:mb-12">Parceiros de Sucesso</h3>
-                <!-- Grid ajustado para 6 colunas no desktop para acomodar o novo logo -->
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 justify-items-center items-center">
                     
                     <!-- Parceiro 1 -->
