@@ -6,7 +6,7 @@
     <title>Evolua Digital | Marketing, Vendas e Inteligência Artificial</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.imgur.com/Y0sHsyi.png">
+    <link rel="icon" type="image/png" href="https://i.imgur.com/W0gDq47.png">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,6 +47,16 @@
         }
         .whatsapp-pulse {
             animation: pulse-green 2s infinite;
+        }
+
+        /* Animação Marquee Parceiros */
+        @keyframes scroll-x {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-scroll-x {
+            animation: scroll-x 40s linear infinite;
+            width: max-content;
         }
     </style>
 </head>
@@ -398,42 +408,77 @@
             </div>
         </section>
 
-        <!-- Parceiros -->
-        <section class="py-16 md:py-20 bg-[#0d0a1b] border-t border-white/5 reveal">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <h3 class="text-3xl md:text-5xl font-extrabold mb-10 md:mb-12">Parceiros de Sucesso</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8 justify-items-center items-center">
-                    
-                    <!-- Parceiro 1 -->
-                    <div class="bg-white/5 p-4 rounded-xl flex items-center justify-center border border-white/5 w-full h-32 hover:bg-white/10 transition-all duration-300 group">
-                        <img src="https://i.imgur.com/v5WHVHC.png" alt="Parceiro 1" class="max-h-20 max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+        <!-- Parceiros (Carrossel Infinito) -->
+        <section class="py-16 md:py-20 bg-[#0d0a1b] border-t border-white/5 reveal overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 text-center mb-10 md:mb-12">
+                <h3 class="text-3xl md:text-5xl font-extrabold">Parceiros de Sucesso</h3>
+            </div>
+            
+            <!-- Altura do container aumentada para h-40 para caber os logos maiores -->
+            <div class="relative w-full overflow-hidden flex items-center h-32 md:h-40">
+                <!-- Sombras laterais para o efeito de fade nas pontas -->
+                <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#0d0a1b] to-transparent z-10 pointer-events-none"></div>
+                <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#0d0a1b] to-transparent z-10 pointer-events-none"></div>
+                
+                <!-- Container da Animação -->
+                <div class="flex animate-scroll-x hover:[animation-play-state:paused] items-center cursor-pointer">
+                    <!-- Bloco 1 (Os 18 Logos) - Gap aumentado para dar respiro -->
+                    <div class="flex items-center gap-12 md:gap-24 px-6 md:px-12">
+                        <!-- Classes de tamanho aumentadas para nivelar os logos: h-20 md:h-28 e max-w-[240px] -->
+                        <img src="https://i.imgur.com/emLhpdd.png" alt="Solarium" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/n5V3F4I.png" alt="Eldorado" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/p7IDhBh.png" alt="Favorita" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/t4A5hFq.png" alt="Teixe" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/7U5Ihs2.png" alt="Casa Nero" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/lbhQ1ci.png" alt="Paula Neves" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/TXIa5rP.png" alt="Farinha Arco Verde" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/PCHj1n4.png" alt="Iscocopos" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/zevx77i.png" alt="Arena Henko" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/JIAhC6L.png" alt="Big House Eventos" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/d4Gt62Y.png" alt="Henko" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/24ULkON.png" alt="Alfra" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/hBAw9a9.png" alt="Artmalte" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <!-- Nūma Odonto (Corrigido o nome) -->
+                        <img src="https://i.imgur.com/v5WHVHC.png" alt="Nūma Odonto" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <!-- New Fish Reduzido (AGORA SIM É O PEIXE! Bariátrica nele!) -->
+                        <img src="https://i.imgur.com/BOwxath.png" alt="New Fish" class="h-10 md:h-12 w-auto max-w-[110px] md:max-w-[140px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <!-- Donti Clinic (Restaurado pro tamanho normal!) -->
+                        <img src="https://i.imgur.com/n5zZwnO.png" alt="Donti Clinic" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <img src="https://i.imgur.com/EcG5BQF.png" alt="Blueprintt" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/brtU57J.png" alt="Parceiro Antigo" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                     </div>
-
-                    <!-- Parceiro 2 -->
-                    <div class="bg-white/5 p-4 rounded-xl flex items-center justify-center border border-white/5 w-full h-32 hover:bg-white/10 transition-all duration-300 group">
-                        <img src="https://i.imgur.com/BOwxath.png" alt="Parceiro 2" class="max-h-20 max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
+                    <!-- Bloco 2 (Clone idêntico para o loop ser perfeito e infinito) -->
+                    <div class="flex items-center gap-12 md:gap-24 px-6 md:px-12">
+                        <img src="https://i.imgur.com/emLhpdd.png" alt="Solarium" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/n5V3F4I.png" alt="Eldorado" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/p7IDhBh.png" alt="Favorita" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/t4A5hFq.png" alt="Teixe" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/7U5Ihs2.png" alt="Casa Nero" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/lbhQ1ci.png" alt="Paula Neves" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/TXIa5rP.png" alt="Farinha Arco Verde" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/PCHj1n4.png" alt="Iscocopos" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/zevx77i.png" alt="Arena Henko" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/JIAhC6L.png" alt="Big House Eventos" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/d4Gt62Y.png" alt="Henko" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/24ULkON.png" alt="Alfra" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/hBAw9a9.png" alt="Artmalte" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <!-- Nūma Odonto (Corrigido o nome) -->
+                        <img src="https://i.imgur.com/v5WHVHC.png" alt="Nūma Odonto" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <!-- New Fish Reduzido (AGORA SIM É O PEIXE! Bariátrica nele!) -->
+                        <img src="https://i.imgur.com/BOwxath.png" alt="New Fish" class="h-10 md:h-12 w-auto max-w-[110px] md:max-w-[140px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <!-- Donti Clinic (Restaurado pro tamanho normal!) -->
+                        <img src="https://i.imgur.com/n5zZwnO.png" alt="Donti Clinic" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        
+                        <img src="https://i.imgur.com/EcG5BQF.png" alt="Blueprintt" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
+                        <img src="https://i.imgur.com/brtU57J.png" alt="Parceiro Antigo" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                     </div>
-
-                    <!-- Parceiro 3 -->
-                    <div class="bg-white/5 p-4 rounded-xl flex items-center justify-center border border-white/5 w-full h-32 hover:bg-white/10 transition-all duration-300 group">
-                        <img src="https://i.imgur.com/n5zZwnO.png" alt="Parceiro 3" class="max-h-20 max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    </div>
-
-                    <!-- Parceiro 4 -->
-                    <div class="bg-white/5 p-4 rounded-xl flex items-center justify-center border border-white/5 w-full h-32 hover:bg-white/10 transition-all duration-300 group">
-                        <img src="https://i.imgur.com/EcG5BQF.png" alt="Parceiro 4" class="max-h-20 max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    </div>
-
-                    <!-- Parceiro 5 -->
-                    <div class="bg-white/5 p-4 rounded-xl flex items-center justify-center border border-white/5 w-full h-32 hover:bg-white/10 transition-all duration-300 group">
-                        <img src="https://i.imgur.com/brtU57J.png" alt="Parceiro 5" class="max-h-20 max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    </div>
-
-                    <!-- Parceiro 6 (Novo) -->
-                    <div class="bg-white/5 p-4 rounded-xl flex items-center justify-center border border-white/5 w-full h-32 hover:bg-white/10 transition-all duration-300 group">
-                        <img src="https://media.licdn.com/dms/image/sync/v2/D5627AQEm98kaC7l3gg/articleshare-shrink_800/articleshare-shrink_800/0/1760146369498?e=2147483647&v=beta&t=3paJ9eHgTHobJunuT9Wh0LCJdKvNLk23vaEPHZKfVd4" alt="Parceiro 6" class="max-h-20 max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300">
-                    </div>
-
                 </div>
             </div>
         </section>
