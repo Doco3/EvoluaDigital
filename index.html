@@ -60,14 +60,14 @@
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased relative">
 
-    <!-- Navbar -->
-    <header class="p-4 md:px-8 sticky top-0 z-50 bg-black/90 backdrop-blur-sm shadow-xl border-b border-white/5 reveal active">
+    <!-- Navbar (Removido o 'reveal active' que travava a animação) -->
+    <header id="main-header" class="py-4 px-4 md:px-8 sticky top-0 z-50 bg-black/90 backdrop-blur-sm shadow-xl border-b border-white/5 transition-transform duration-500">
         <nav class="flex justify-between items-center max-w-7xl mx-auto">
             <a href="#" class="flex items-center hover:opacity-90 transition-opacity z-50">
-                <!-- LOGO MAIOR (Ainda mais gigante pra dar aquele destaque) -->
-                <img src="https://i.imgur.com/9TvcGoB.png" alt="Logo Evolua Digital" class="h-24 md:h-32 w-auto object-contain transform scale-150 md:scale-[1.8] origin-left">
+                <!-- LOGO -->
+                <img id="header-logo" src="https://i.imgur.com/9TvcGoB.png" alt="Logo Evolua Digital" class="h-24 md:h-32 w-auto object-contain transform scale-150 md:scale-[1.8] origin-left transition-all duration-300">
             </a>
             
             <!-- Desktop Menu -->
@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <!-- Missão, Visão e Valores (Caixinhas Premium Lateralizadas) -->
+            <!-- Missão, Visão e Valores -->
             <div class="max-w-7xl mx-auto px-4 mt-16 md:mt-24">
                 <div class="grid md:grid-cols-3 gap-6 md:gap-8 items-stretch text-left">
                     
@@ -414,17 +414,13 @@
                 <h3 class="text-3xl md:text-5xl font-extrabold">Parceiros de Sucesso</h3>
             </div>
             
-            <!-- Altura do container aumentada para h-40 para caber os logos maiores -->
             <div class="relative w-full overflow-hidden flex items-center h-32 md:h-40">
-                <!-- Sombras laterais para o efeito de fade nas pontas -->
                 <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#0d0a1b] to-transparent z-10 pointer-events-none"></div>
                 <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#0d0a1b] to-transparent z-10 pointer-events-none"></div>
                 
-                <!-- Container da Animação -->
                 <div class="flex animate-scroll-x hover:[animation-play-state:paused] items-center cursor-pointer">
-                    <!-- Bloco 1 (Os 18 Logos) - Gap aumentado para dar respiro -->
+                    <!-- Bloco 1 -->
                     <div class="flex items-center gap-12 md:gap-24 px-6 md:px-12">
-                        <!-- Classes de tamanho aumentadas para nivelar os logos: h-20 md:h-28 e max-w-[240px] -->
                         <img src="https://i.imgur.com/emLhpdd.png" alt="Solarium" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/n5V3F4I.png" alt="Eldorado" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/p7IDhBh.png" alt="Favorita" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
@@ -438,20 +434,13 @@
                         <img src="https://i.imgur.com/d4Gt62Y.png" alt="Henko" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/24ULkON.png" alt="Alfra" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/hBAw9a9.png" alt="Artmalte" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
-                        
-                        <!-- Nūma Odonto (Corrigido o nome) -->
                         <img src="https://i.imgur.com/v5WHVHC.png" alt="Nūma Odonto" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
-                        
-                        <!-- New Fish Reduzido (AGORA SIM É O PEIXE! Bariátrica nele!) -->
                         <img src="https://i.imgur.com/BOwxath.png" alt="New Fish" class="h-10 md:h-12 w-auto max-w-[110px] md:max-w-[140px] object-contain hover:scale-110 transition-transform duration-300">
-                        
-                        <!-- Donti Clinic (Restaurado pro tamanho normal!) -->
                         <img src="https://i.imgur.com/n5zZwnO.png" alt="Donti Clinic" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
-                        
                         <img src="https://i.imgur.com/EcG5BQF.png" alt="Blueprintt" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/brtU57J.png" alt="Parceiro Antigo" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                     </div>
-                    <!-- Bloco 2 (Clone idêntico para o loop ser perfeito e infinito) -->
+                    <!-- Bloco 2 -->
                     <div class="flex items-center gap-12 md:gap-24 px-6 md:px-12">
                         <img src="https://i.imgur.com/emLhpdd.png" alt="Solarium" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/n5V3F4I.png" alt="Eldorado" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
@@ -466,16 +455,9 @@
                         <img src="https://i.imgur.com/d4Gt62Y.png" alt="Henko" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/24ULkON.png" alt="Alfra" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/hBAw9a9.png" alt="Artmalte" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
-                        
-                        <!-- Nūma Odonto (Corrigido o nome) -->
                         <img src="https://i.imgur.com/v5WHVHC.png" alt="Nūma Odonto" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
-                        
-                        <!-- New Fish Reduzido (AGORA SIM É O PEIXE! Bariátrica nele!) -->
                         <img src="https://i.imgur.com/BOwxath.png" alt="New Fish" class="h-10 md:h-12 w-auto max-w-[110px] md:max-w-[140px] object-contain hover:scale-110 transition-transform duration-300">
-                        
-                        <!-- Donti Clinic (Restaurado pro tamanho normal!) -->
                         <img src="https://i.imgur.com/n5zZwnO.png" alt="Donti Clinic" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
-                        
                         <img src="https://i.imgur.com/EcG5BQF.png" alt="Blueprintt" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                         <img src="https://i.imgur.com/brtU57J.png" alt="Parceiro Antigo" class="h-20 md:h-28 w-auto max-w-[180px] md:max-w-[240px] object-contain hover:scale-110 transition-transform duration-300">
                     </div>
@@ -561,33 +543,57 @@
     </main>
     <footer class="p-10 text-center text-sm text-gray-500 border-t border-white/5 bg-[#0d0a1b]"><p>&copy; 2024 Evolua Digital.</p></footer>
 
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="fixed bottom-28 right-8 z-50 bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)] hover:bg-purple-500 hover:scale-110 transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+        <i class="fas fa-arrow-up text-xl"></i>
+    </button>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/5511915912846" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(37,211,102,0.5)] hover:bg-[#128C7E] hover:scale-110 transition-all duration-300 group whatsapp-pulse">
         <i class="fab fa-whatsapp text-4xl group-hover:rotate-12 transition-transform"></i>
     </a>
 
     <script>
+        // Função do Header que some e Botão Voltar ao Topo
+        const header = document.getElementById('main-header');
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                // Esconde o header puxando ele para cima (-translate-y-full)
+                header.classList.add('-translate-y-full');
+                
+                // Mostra o botão de voltar ao topo
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            } else {
+                // Volta o header ao normal quando chega no topo
+                header.classList.remove('-translate-y-full');
+                
+                // Esconde o botão de voltar ao topo
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+                backToTopBtn.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+            }
+        });
+
         // Função de envio do formulário para o WhatsApp
         function enviarParaWhatsApp(event) {
-            event.preventDefault(); // Evita que a página recarregue
+            event.preventDefault();
 
-            // Pega os valores dos campos
             const nome = document.getElementById('form-nome').value;
             const email = document.getElementById('form-email').value;
             const telefone = document.getElementById('form-telefone').value;
             const motivo = document.getElementById('form-motivo').value;
 
-            // Monta a mensagem que vai chegar no seu celular
             const mensagem = `🚀 *Novo Lead via Site (Evolua Digital)*\n\n*Nome:* ${nome}\n*E-mail:* ${email}\n*Telefone:* ${telefone}\n*Motivo:* ${motivo}\n\n_Aguardo retorno!_`;
 
-            // Codifica a mensagem para formato de link
             const mensagemCodificada = encodeURIComponent(mensagem);
             const numeroZap = "5511915912846";
             
-            // Abre o WhatsApp numa nova aba
             window.open(`https://wa.me/${numeroZap}?text=${mensagemCodificada}`, '_blank');
         }
 
+        // Menu Mobile e Observadores de Animação
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         function toggleMenu() { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); document.body.classList.toggle('overflow-hidden'); }
